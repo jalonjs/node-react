@@ -4,8 +4,8 @@
   "description": "react nodejs es67",
   "main": "server/app.js",
   "scripts": {
-    "start": "babel-node ./server/app.js",
-    "build": "webpack --progress --colors && babel ./server -s -d ./build/server && babel ./public -s -d ./build/public",
+    "start": "export NODE_ENV=develop && webpack --progress --colors && babel-node ./server/app.js",
+    "build": "rm -rf ./build && export NODE_ENV=production && webpack --progress --colors && babel ./server -s -d ./build/server && babel ./public -s -d ./build/public",
     "prod": "node ./build/server/app.js"
   },
   "author": "Jalon",

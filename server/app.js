@@ -7,7 +7,7 @@ import routes from '../public/routes'
 
 var app = express();
 app.use(express.static(path.join(__dirname, '../public/static')));
-
+console.log(process.env.NODE_ENV );
 const html = (r_html) => {
     return `
     <!DOCTYPE html>

@@ -1,12 +1,16 @@
 import React from 'react'
 import App from './app'
 import About from './about'
-import {Router, Route, hashHistory} from 'react-router'
+import Hello from './hello'
+import {Router, Route, browserHistory, IndexRedirect} from 'react-router'
 
 const routes = (
-    <Router history={hashHistory}>
-        <Route path="/" component={() => (<App name="Jalon" />)}/>
-        <Route path="/about" component={About}/>
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRedirect to="/hello"/>
+            <Route path="about" component={About}/>
+            <Route path="hello" component={() => (<Hello name="Jalon" />)}/>
+        </Route>
     </Router>
 );
 export default routes

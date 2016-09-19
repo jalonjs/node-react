@@ -6,7 +6,7 @@ class About extends React.Component {
         const {className, ...others} = this.props;
         return (
             <div>
-                I am Jalon
+                about: I am Jalon
             </div>
         );
     }
